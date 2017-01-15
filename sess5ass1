@@ -1,0 +1,80 @@
+package abstarct;
+
+abstract class Figure {
+	 double dim1=2.3;                         //propertie of abstract class
+	abstract void findArea();                 //abstract methods of abstract class
+	abstract void findPerimeter();
+
+	public static void main(String[] args) {
+		Circle obj = new Circle();//creating object of class circle to display area and perimeter
+		obj.findArea();
+		obj.findPerimeter();
+		
+		Rectangle obj1 = new Rectangle();
+		obj1.findArea();//creating object of class rectangle to display area and perimeter
+		obj1.findPerimeter();
+		
+		Triangle obj2 = new Triangle();
+		obj2.findArea();//creating object of class triangle to display area and perimeter
+		obj2.findPerimeter();
+	}
+}
+
+
+
+package abstarct;
+
+public class Circle extends Figure //extending abstract class
+{
+	float area,perimeter;
+	
+	
+	public void findArea(){             // implementing methods of abstract class
+		
+		area =(float) (3.14*dim1*dim1);
+		System.out.println("area of circle of radius 2.3 is: "+area);
+	}
+	public void findPerimeter(){
+		perimeter = (float) (2*3.14*dim1);
+		System.out.println("perimeter of circle of radius 2.3 is: "+perimeter);
+		
+	}
+}
+
+
+package abstarct;
+
+public class Rectangle extends Figure{       //extending abstract class
+
+	int l=5,b=6;
+	int area,perimeter;
+	
+    void findArea() {             // implementing methods of abstract class
+		area = l*b;
+		System.out.println("area of rectangle of length and breadth 5 and 6 respectively is: "+area);
+		}
+    void findPerimeter() {
+		perimeter = 2*(l+b);
+		System.out.println("perimeter of rectangle of length and breadth 5 and 6 respectively is: "+perimeter);
+	}
+}
+
+
+package abstarct;
+
+public class Triangle extends Figure{                 //extending abstract class
+
+   int a=3, b=4, c=8, h = 6,perimeter;
+   float area;
+	void findArea() {                              // implementing methods of abstract class
+		area = 0.5f*b*h;
+		System.out.println("area of triangle is: "+area);
+		
+	}
+	void findPerimeter() {
+		perimeter = a+b+c;
+		System.out.println("perimeter of triangle is: "+perimeter);
+		
+	}
+  }
+
